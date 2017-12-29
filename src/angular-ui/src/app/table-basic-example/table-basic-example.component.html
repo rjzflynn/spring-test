@@ -1,0 +1,41 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" matSort>
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Calories Column -->
+    <ng-container matColumnDef="calories">
+      <mat-header-cell  *matHeaderCellDef mat-sort-header>  Calories </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.calories}} </mat-cell>
+    </ng-container>
+
+    <!-- Protein Column -->
+    <ng-container matColumnDef="protein">
+      <mat-header-cell *matHeaderCellDef> Protein </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.protein}} </mat-cell>
+    </ng-container>
+
+    <!-- Fat Column -->
+    <ng-container matColumnDef="fat">
+      <mat-header-cell *matHeaderCellDef> Fat </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.fat}} </mat-cell>
+    </ng-container>
+
+    <!-- Carbs Column -->
+    <ng-container matColumnDef="carbs">
+      <mat-header-cell *matHeaderCellDef> Carbs </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.carbs}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+</div>
