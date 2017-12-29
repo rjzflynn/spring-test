@@ -7,31 +7,31 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      <mat-cell *matCellDef="let menu"> {{menu.name}} </mat-cell>
     </ng-container>
 
     <!-- Calories Column -->
     <ng-container matColumnDef="calories">
       <mat-header-cell  *matHeaderCellDef mat-sort-header>  Calories </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.calories}} </mat-cell>
+      <mat-cell *matCellDef="let menu"> {{menu.calories}} </mat-cell>
     </ng-container>
 
     <!-- Protein Column -->
     <ng-container matColumnDef="protein">
       <mat-header-cell *matHeaderCellDef> Protein </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.protein}} </mat-cell>
+      <mat-cell *matCellDef="let menu"> {{menu.protein}} </mat-cell>
     </ng-container>
 
     <!-- Fat Column -->
     <ng-container matColumnDef="fat">
       <mat-header-cell *matHeaderCellDef> Fat </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.fat}} </mat-cell>
+      <mat-cell *matCellDef="let menu"> {{menu.totalFat}} </mat-cell>
     </ng-container>
 
     <!-- Carbs Column -->
     <ng-container matColumnDef="carbs">
       <mat-header-cell *matHeaderCellDef> Carbs </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.carbs}} </mat-cell>
+      <mat-cell *matCellDef="let menu"> {{menu.carbs}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
