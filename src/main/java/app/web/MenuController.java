@@ -16,7 +16,7 @@ public class MenuController {
 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/getMenu/{id}", method = RequestMethod.GET)
-	public ArrayList<MenuItem> greeting(@PathVariable int id) {
+	public ArrayList<MenuItem> getMenu(@PathVariable int id) {
 		return MenuService.buildMenuItems();
 	}
 
