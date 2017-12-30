@@ -1,9 +1,8 @@
 package app.domain;
 
-
 public class MenuItem {
-	
-	private String name;	
+
+	private String name;
 	private int calories;
 	private int caloriesFromFat;
 	private int totalFat;
@@ -14,15 +13,15 @@ public class MenuItem {
 	private int carbs;
 	private int fibre;
 	private int sugar;
-	private int protein;	
+	private int protein;
 	private int vitA;
 	private int vitC;
 	private int calcuim;
 	private int iron;
-		
-	public MenuItem( String name, int calories, int caloriesFromFat, int totalFat, double saturatedFat,
-			double transFat, int cholesterol, int sodium, int carbs, int fibre, int sugar, int protein, int vitA,
-			int vitC, int calcuim, int iron) {
+
+	private MenuItem(String name, int calories, int caloriesFromFat, int totalFat, double saturatedFat, double transFat,
+			int cholesterol, int sodium, int carbs, int fibre, int sugar, int protein, int vitA, int vitC, int calcuim,
+			int iron) {
 		super();
 		this.name = name;
 		this.calories = calories;
@@ -42,9 +41,6 @@ public class MenuItem {
 		this.iron = iron;
 	}
 
-	
-
-	
 	public String getName() {
 		return name;
 	}
@@ -57,7 +53,6 @@ public class MenuItem {
 		return calories;
 	}
 
-
 	public void setCalories(int calories) {
 		this.calories = calories;
 	}
@@ -66,197 +61,113 @@ public class MenuItem {
 		return caloriesFromFat;
 	}
 
-
-
-
 	public void setCaloriesFromFat(int caloriesFromFat) {
 		this.caloriesFromFat = caloriesFromFat;
 	}
-
-
-
 
 	public int getTotalFat() {
 		return totalFat;
 	}
 
-
-
-
 	public void setTotalFat(int totalFat) {
 		this.totalFat = totalFat;
 	}
-
-
-
 
 	public double getSaturatedFat() {
 		return saturatedFat;
 	}
 
-
-
-
 	public void setSaturatedFat(double saturatedFat) {
 		this.saturatedFat = saturatedFat;
 	}
-
-
-
 
 	public double getTransFat() {
 		return transFat;
 	}
 
-
-
-
 	public void setTransFat(double transFat) {
 		this.transFat = transFat;
 	}
-
-
-
 
 	public int getCholesterol() {
 		return cholesterol;
 	}
 
-
-
-
 	public void setCholesterol(int cholesterol) {
 		this.cholesterol = cholesterol;
 	}
-
-
-
 
 	public int getSodium() {
 		return sodium;
 	}
 
-
-
-
 	public void setSodium(int sodium) {
 		this.sodium = sodium;
 	}
-
-
-
 
 	public int getCarbs() {
 		return carbs;
 	}
 
-
-
-
 	public void setCarbs(int carbs) {
 		this.carbs = carbs;
 	}
-
-
-
 
 	public int getFibre() {
 		return fibre;
 	}
 
-
-
-
 	public void setFibre(int fibre) {
 		this.fibre = fibre;
 	}
-
-
-
 
 	public int getSugar() {
 		return sugar;
 	}
 
-
-
-
 	public void setSugar(int sugar) {
 		this.sugar = sugar;
 	}
-
-
-
 
 	public int getProtein() {
 		return protein;
 	}
 
-
-
-
 	public void setProtein(int protein) {
 		this.protein = protein;
 	}
-
-
-
 
 	public int getVitA() {
 		return vitA;
 	}
 
-
-
-
 	public void setVitA(int vitA) {
 		this.vitA = vitA;
 	}
-
-
-
 
 	public int getVitC() {
 		return vitC;
 	}
 
-
-
-
 	public void setVitC(int vitC) {
 		this.vitC = vitC;
 	}
-
-
-
 
 	public int getCalcuim() {
 		return calcuim;
 	}
 
-
-
-
 	public void setCalcuim(int calcuim) {
 		this.calcuim = calcuim;
 	}
-
-
-
 
 	public int getIron() {
 		return iron;
 	}
 
-
-
-
 	public void setIron(int iron) {
 		this.iron = iron;
 	}
-
-
-
 
 	public String desc() {
 		return "MenuItem [name=" + name + ", calories=" + calories + ", caloriesFromFat=" + caloriesFromFat
@@ -266,10 +177,9 @@ public class MenuItem {
 				+ calcuim + ", iron=" + iron + "]";
 	}
 
-
 	public static class Builder {
-		
-		private String name;	
+
+		private String name;
 		private int calories;
 		private int caloriesFromFat;
 		private int totalFat;
@@ -280,45 +190,45 @@ public class MenuItem {
 		private int carbs;
 		private int fibre;
 		private int sugar;
-		private int protein;	
+		private int protein;
 		private int vitA;
 		private int vitC;
 		private int calcuim;
 		private int iron;
-		
+
 		public Builder() {
 		}
-		
+
 		public Builder withName(String name) {
 			this.name = name;
 			return this;
 		}
-		
+
 		public Builder withCalories(int calories) {
 			this.calories = calories;
 			return this;
 		}
-		
+
 		public Builder withCarbs(int carbs) {
 			this.carbs = carbs;
 			return this;
 		}
-		
+
 		public Builder withProtein(int protein) {
 			this.protein = protein;
 			return this;
 		}
-		
+
 		public Builder withFat(int totalFat) {
 			this.totalFat = totalFat;
 			return this;
 		}
-		
+
 		public MenuItem build() {
-			return new MenuItem( name, calories, caloriesFromFat, totalFat, saturatedFat, transFat,
-					cholesterol, sodium, carbs, fibre, sugar, protein, vitA, vitC, calcuim, iron);
+			return new MenuItem(name, calories, caloriesFromFat, totalFat, saturatedFat, transFat, cholesterol, sodium,
+					carbs, fibre, sugar, protein, vitA, vitC, calcuim, iron);
 		}
-		
+
 	}
-	
+
 }
