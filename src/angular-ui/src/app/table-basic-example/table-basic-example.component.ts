@@ -2,7 +2,7 @@ import {Component, ViewChild, OnInit } from '@angular/core';
 import {MatTableDataSource, MatSort} from '@angular/material';
 import { MenuService } from './../services/menu.service';
 import {DataSource} from '@angular/cdk/collections';
-import { Menu } from './../models/menu';
+import { MenuItem } from './../models/menu';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 

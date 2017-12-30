@@ -7,6 +7,10 @@ import { TableBasicExample } from './table-basic-example/table-basic-example.com
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuService } from './services/menu.service';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import {MatToolbarModule} from '@angular/material';
+
+
 
 
 
@@ -14,11 +18,13 @@ import { MenuService } from './services/menu.service';
 @NgModule({
   declarations: [
     AppComponent,
-    TableBasicExample
+    TableBasicExample,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
     MatTableModule,
+    MatToolbarModule,
     HttpClientModule
   ],
   providers: [MenuService],
