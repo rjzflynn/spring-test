@@ -7,8 +7,11 @@ import { TableBasicExample } from './table-basic-example/table-basic-example.com
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuService } from './services/menu.service';
+import { DataService } from './data.service';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import {MatToolbarModule} from '@angular/material';
+import {MatToolbarModule,MatGridListModule} from '@angular/material';
+import { ResturantGridComponent } from './resturant-grid/resturant-grid.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 
@@ -19,15 +22,18 @@ import {MatToolbarModule} from '@angular/material';
   declarations: [
     AppComponent,
     TableBasicExample,
-    ToolbarComponent
+    ToolbarComponent,
+    ResturantGridComponent
   ],
   imports: [
     BrowserModule,
     MatTableModule,
     MatToolbarModule,
-    HttpClientModule
+    MatGridListModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [MenuService],
+  providers: [MenuService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
