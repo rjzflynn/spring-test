@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from './../data.service';
 import { MenuService } from './../services/menu.service';
 
 
@@ -11,10 +10,6 @@ import { MenuService } from './../services/menu.service';
 })
 export class ResturantGridComponent {
 
-	selectMenu(id: number): void {
-	  this.dataService.changeMenu(id);
-	}
-
-	constructor(private dataService: DataService) { }	
+	constructor() { }	
 
 }

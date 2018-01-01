@@ -7,7 +7,6 @@ import { TableBasicExample } from './table-basic-example/table-basic-example.com
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuService } from './services/menu.service';
-import { DataService } from './data.service';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import {MatToolbarModule,MatGridListModule} from '@angular/material';
 import { ResturantGridComponent } from './resturant-grid/resturant-grid.component';
@@ -33,7 +32,7 @@ import { AppRoutingModule } from './/app-routing.module';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [MenuService,DataService],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
