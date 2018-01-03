@@ -1,3 +1,4 @@
+import { DataService } from '../services/data.service';
 import {Component, ViewChild, OnInit,OnChanges,Input } from '@angular/core';
 import {MatTableDataSource, MatSort} from '@angular/material';
 import { MenuService } from './../services/menu.service';
@@ -14,21 +15,32 @@ import { Location } from '@angular/common';
   styleUrls: ['./table-basic-example.component.css'],
   templateUrl: './table-basic-example.component.html',
 })
-export class TableBasicExample {
+export class TableBasicExample implements OnInit{
 
   displayedColumns = ['name', 'calories', 'fat', 'protein', 'carbs'];
   dataSource = new MenuDataSource(this.menuService, this.location, this.route);
-  currentMenuName : String;
+  currentResturantName : String;
 
   constructor(
     private menuService: MenuService, 
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private dataService:DataService
     ) { } 
+
+    ngOnInit() {
+      const id = +this.route.snapshot.paramMap.get('id');
+      this.currentResturantName = this.dataService.getCurrentResturantName(id);      
+    }
+
+    goBack(): void {
+      this.location.back();
+    }
+
+
 }
 
 export class MenuDataSource extends DataSource<any> {
-  currentMenu : Number;
   constructor(
     private menuService: MenuService,
     private location: Location,
@@ -41,10 +53,5 @@ export class MenuDataSource extends DataSource<any> {
     const id = +this.route.snapshot.paramMap.get('id');
     return  this.menuService.getMenuItems(id);
   }
-
-  goBack(): void {
-    this.location.back();
-  }
-
   disconnect() {}
 }

@@ -11,10 +11,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import {MatToolbarModule,MatGridListModule} from '@angular/material';
 import { ResturantGridComponent } from './resturant-grid/resturant-grid.component';
 import { AppRoutingModule } from './/app-routing.module';
-
-
-
-
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -32,7 +29,7 @@ import { AppRoutingModule } from './/app-routing.module';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [MenuService],
+  providers: [MenuService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

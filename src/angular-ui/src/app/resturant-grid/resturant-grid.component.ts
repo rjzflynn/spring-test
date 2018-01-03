@@ -9,7 +9,5 @@ import { MenuService } from './../services/menu.service';
   styleUrls: ['./resturant-grid.component.css']
 })
 export class ResturantGridComponent {
-
-	constructor() { }	
-
+  constructor() { }	
 }
