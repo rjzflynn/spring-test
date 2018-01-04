@@ -1,4 +1,4 @@
-<h3> {{currentResturantName}} Menu </h3>
+<h1> {{currentResturantName}} Menu </h1 >
 <div class="example-container mat-elevation-z8">
   <mat-table #table [dataSource]="dataSource" matSort>
 
@@ -40,4 +40,6 @@
 
   </mat-table>
 </div>
-<a href="" click="goBack">Go Back</a>
+<button mat-button (click)="goBack()">Go Back</button>
+
+

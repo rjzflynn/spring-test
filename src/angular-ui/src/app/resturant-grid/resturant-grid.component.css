@@ -1,3 +1,8 @@
 mat-grid-tile {
-  background: lightblue;
+  background-image: "assets/images/mcdonalds.png";
+}
+
+.mat-grid-tile a img{
+  max-width:100%;
+  max-height:100%;
 }

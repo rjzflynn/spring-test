@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from './../services/menu.service';
+import { ResturantCardComponent } from './../resturant-card/resturant-card.component';
+
 
 
 
@@ -11,3 +13,5 @@ import { MenuService } from './../services/menu.service';
 export class ResturantGridComponent {
   constructor() { }	
 }
+
+
