@@ -41,6 +41,8 @@ export class TableBasicExample implements OnInit{
 }
 
 export class MenuDataSource extends DataSource<any> {
+  private data: MenuItem[];
+
   constructor(
     private menuService: MenuService,
     private location: Location,
@@ -49,9 +51,14 @@ export class MenuDataSource extends DataSource<any> {
     super();
   }
 
+  updateData(newData: MenuItem[]) {
+    this.data = newData;
+  }
+
   connect(): Observable<MenuItem[]> {
     const id = +this.route.snapshot.paramMap.get('id');
     return  this.menuService.getMenuItems(id);
   }
+
   disconnect() {}
 }
