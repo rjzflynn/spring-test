@@ -29,7 +29,7 @@ public class MenuItemComparator implements Comparator<MenuItem> {
 		case "protein"	:
 			return sortAsc ? Integer.valueOf(o2.getProtein()).compareTo(o1.getProtein())
 					: Integer.valueOf(o1.getProtein()).compareTo(o2.getProtein());
-		case "carbs"	:
+		case "carbs":
 			return sortAsc ? Integer.valueOf(o2.getCarbs()).compareTo(o1.getCarbs())
 					: Integer.valueOf(o1.getCarbs()).compareTo(o2.getCarbs());					
 			//TODO: the rest

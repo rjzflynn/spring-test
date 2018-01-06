@@ -17,7 +17,13 @@ import { Location } from '@angular/common';
 })
 export class TableBasicExample implements OnInit{
 
-  displayedColumns = ['name', 'calories', 'fat', 'protein', 'carbs'];
+  winHeight: number;
+  winWidth: number;
+  displayedColumnsMobile = ['name', 'calories', 'fat', 'protein', 'carbs'];
+  displayedColumnsDesktop = ['name', 'calories', 'fat', 'caloriesFromFat','saturatedFat',
+                            'transFat', 'protein', 'carbs'];
+
+  displayedColumns = [];
   sort : Sort;
   currentResturantName : String;
   dataSource = new MenuDataSource(this.menuService, this.route, this.sort);
@@ -26,8 +32,16 @@ export class TableBasicExample implements OnInit{
     private menuService: MenuService, 
     private route: ActivatedRoute,
     private location: Location,
-    private dataService:DataService
-    ) { } 
+    private dataService:DataService,
+    ) {
+      this.winHeight = window.screen.height;
+      this.winWidth = window.screen.width;
+      if(this.winWidth < 440){
+        this.displayedColumns = this.displayedColumnsMobile;
+      } else {
+        this.displayedColumns = this.displayedColumnsDesktop;
+      }
+     } 
 
     ngOnInit() {
       const id = +this.route.snapshot.paramMap.get('id');

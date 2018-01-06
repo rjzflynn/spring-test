@@ -19,7 +19,7 @@ import app.util.MenuItemComparator;
 @RestController
 public class MenuController {
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin()
 	@RequestMapping(value = "/getMenu/{id}", method = RequestMethod.GET)
 	public ArrayList<MenuItem> getMenu(@PathVariable int id,
 			@RequestParam(value = "sort", required = false) String sort,

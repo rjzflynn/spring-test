@@ -13,8 +13,14 @@
 
     <!-- Calories Column -->
     <ng-container matColumnDef="calories">
-      <mat-header-cell  *matHeaderCellDef mat-sort-header>  Calories </mat-header-cell>
+      <mat-header-cell  *matHeaderCellDef mat-sort-header>  Cal </mat-header-cell>
       <mat-cell *matCellDef="let menu"> {{menu.calories}} </mat-cell>
+    </ng-container>
+
+    <!-- CaloriesFromFat Column -->
+    <ng-container matColumnDef="caloriesFromFat">
+      <mat-header-cell  *matHeaderCellDef mat-sort-header>  Cal from Fat </mat-header-cell>
+      <mat-cell *matCellDef="let menu"> {{menu.caloriesFromFat}} </mat-cell>
     </ng-container>
 
     <!-- Protein Column -->
@@ -27,6 +33,18 @@
     <ng-container matColumnDef="fat">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Fat </mat-header-cell>
       <mat-cell *matCellDef="let menu"> {{menu.totalFat}} </mat-cell>
+    </ng-container>
+
+    <!-- SaturatedFat Column -->
+    <ng-container matColumnDef="saturatedFat">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Saturated Fat </mat-header-cell>
+      <mat-cell *matCellDef="let menu"> {{menu.saturatedFat}} </mat-cell>
+    </ng-container>
+
+    <!-- TransFat Column -->
+    <ng-container matColumnDef="transFat">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Trans Fat </mat-header-cell>
+      <mat-cell *matCellDef="let menu"> {{menu.transFat}} </mat-cell>
     </ng-container>
 
     <!-- Carbs Column -->

@@ -226,6 +226,21 @@ public class MenuItem {
 			this.totalFat = totalFat;
 			return this;
 		}
+		
+		public Builder withCalsFromFat(int calsFromFat) {
+			this.caloriesFromFat = calsFromFat;
+			return this;
+		}
+		
+		public Builder withSaturatedFat(int saturatedFat) {
+			this.saturatedFat = saturatedFat;
+			return this;
+		}
+		
+		public Builder withTransFat(int transFat) {
+			this.transFat = transFat;
+			return this;
+		}
 
 		public MenuItem build() {
 			return new MenuItem(name, calories, caloriesFromFat, totalFat, saturatedFat, transFat, cholesterol, sodium,
