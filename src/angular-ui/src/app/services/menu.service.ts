@@ -10,7 +10,7 @@ import { Sort } from '@angular/material';
 @Injectable()
 export class MenuService {
 
-  private serviceUrl = 'http://localhost:8080/getMenu/';
+  private serviceUrl = 'http://192.168.0.108:8080/getMenu/';
 
   constructor(private http: HttpClient) { }
 

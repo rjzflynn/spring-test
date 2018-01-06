@@ -9,3 +9,9 @@
   overflow: auto;
   max-height: 500px;
 }
+
+.mat-header-cell {
+  font-weight:bold;
+  color:black;
+  font-size:1em;
+}
