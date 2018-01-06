@@ -1,6 +1,6 @@
 import { DataService } from '../services/data.service';
 import {Component, ViewChild, OnInit,OnChanges,Input } from '@angular/core';
-import {MatTableDataSource, MatSort} from '@angular/material';
+import {MatTableDataSource, MatSort, Sort} from '@angular/material';
 import { MenuService } from './../services/menu.service';
 import {DataSource} from '@angular/cdk/collections';
 import { MenuItem } from './../models/menuitem';
@@ -18,8 +18,9 @@ import { Location } from '@angular/common';
 export class TableBasicExample implements OnInit{
 
   displayedColumns = ['name', 'calories', 'fat', 'protein', 'carbs'];
-  dataSource = new MenuDataSource(this.menuService, this.location, this.route);
+  sort : Sort;
   currentResturantName : String;
+  dataSource = new MenuDataSource(this.menuService, this.route, this.sort);
 
   constructor(
     private menuService: MenuService, 
@@ -31,6 +32,11 @@ export class TableBasicExample implements OnInit{
     ngOnInit() {
       const id = +this.route.snapshot.paramMap.get('id');
       this.currentResturantName = this.dataService.getCurrentResturantName(id);      
+    }
+
+    sortData(sort: Sort){
+      this.sort = sort;
+      this.dataSource = new MenuDataSource(this.menuService, this.route, this.sort);
     }
 
     goBack(): void {
@@ -45,8 +51,8 @@ export class MenuDataSource extends DataSource<any> {
 
   constructor(
     private menuService: MenuService,
-    private location: Location,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private sort: Sort
     ) {
     super();
   }
@@ -57,7 +63,7 @@ export class MenuDataSource extends DataSource<any> {
 
   connect(): Observable<MenuItem[]> {
     const id = +this.route.snapshot.paramMap.get('id');
-    return  this.menuService.getMenuItems(id);
+    return  this.menuService.getMenuItems(id, this.sort);
   }
 
   disconnect() {}

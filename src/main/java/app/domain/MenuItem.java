@@ -1,5 +1,6 @@
 package app.domain;
 
+
 public class MenuItem {
 
 	private String name;
@@ -169,13 +170,15 @@ public class MenuItem {
 		this.iron = iron;
 	}
 
-	public String desc() {
+	public String toString() {
 		return "MenuItem [name=" + name + ", calories=" + calories + ", caloriesFromFat=" + caloriesFromFat
 				+ ", totalFat=" + totalFat + ", saturatedFat=" + saturatedFat + ", transFat=" + transFat
 				+ ", cholesterol=" + cholesterol + ", sodium=" + sodium + ", carbs=" + carbs + ", fibre=" + fibre
 				+ ", sugar=" + sugar + ", protein=" + protein + ", vitA=" + vitA + ", vitC=" + vitC + ", calcuim="
 				+ calcuim + ", iron=" + iron + "]";
 	}
+	
+
 
 	public static class Builder {
 
@@ -230,5 +233,6 @@ public class MenuItem {
 		}
 
 	}
+
 
 }

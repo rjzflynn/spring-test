@@ -1,6 +1,6 @@
 <h1> {{currentResturantName}} Menu </h1 >
 <div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource" matSort>
+  <mat-table #table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -19,19 +19,19 @@
 
     <!-- Protein Column -->
     <ng-container matColumnDef="protein">
-      <mat-header-cell *matHeaderCellDef> Protein </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Protein </mat-header-cell>
       <mat-cell *matCellDef="let menu"> {{menu.protein}} </mat-cell>
     </ng-container>
 
     <!-- Fat Column -->
     <ng-container matColumnDef="fat">
-      <mat-header-cell *matHeaderCellDef> Fat </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Fat </mat-header-cell>
       <mat-cell *matCellDef="let menu"> {{menu.totalFat}} </mat-cell>
     </ng-container>
 
     <!-- Carbs Column -->
     <ng-container matColumnDef="carbs">
-      <mat-header-cell *matHeaderCellDef> Carbs </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Carbs </mat-header-cell>
       <mat-cell *matCellDef="let menu"> {{menu.carbs}} </mat-cell>
     </ng-container>
 
