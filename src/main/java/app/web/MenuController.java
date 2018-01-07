@@ -22,12 +22,7 @@ public class MenuController {
 	@CrossOrigin()
 	@RequestMapping(value = "/getMenuCatagories/{id}", method = RequestMethod.GET)
 	public ArrayList<String> getMenuCatagories(@PathVariable int id) {
-		ArrayList<String> catagories = new ArrayList<String>();
-		catagories.add("Beef");
-		catagories.add("Chicken");
-		catagories.add("Fish");
-		catagories.add("Salads");
-		catagories.add("Sides");
+		ArrayList<String> catagories = MenuService.buildMenuCatagories(id);
 		return catagories;
 	}
 
@@ -38,7 +33,6 @@ public class MenuController {
 			@RequestParam(value = "by", required = false) String by) {
 		
 		List<MenuItem> menuItems = MenuService.buildMenuItems(id, catagory);
-
 		if (sort != null) {
 			boolean sortAsc = sort.equalsIgnoreCase("asc");
 			Collections.sort(menuItems, new MenuItemComparator(by, sortAsc));

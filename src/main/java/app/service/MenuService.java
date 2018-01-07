@@ -160,5 +160,17 @@ public class MenuService {
 		items.add(item5);
 		return items;
 	}
+	
+	
+	public static ArrayList<String> buildMenuCatagories(int id) {
+		//TODO:
+		ArrayList<String> catagories = new ArrayList<String>();
+		catagories.add("Beef");
+		catagories.add("Chicken");
+		catagories.add("Fish");
+		catagories.add("Salads");
+		catagories.add("Sides");
+		return catagories;
+	}
 
 }
