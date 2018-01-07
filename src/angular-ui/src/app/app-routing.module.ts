@@ -1,3 +1,4 @@
+import { MenuAccordionComponent } from './menu-accordion/menu-accordion.component';
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -8,7 +9,8 @@ import { TableBasicExample } from './table-basic-example/table-basic-example.com
 const routes: Routes = [
   { path: 'resturants', component: ResturantGridComponent },
   { path: '', redirectTo: '/resturants', pathMatch: 'full' },
-  { path: 'resturant/:id', component: TableBasicExample }
+  { path: 'resturant/:id', component: MenuAccordionComponent }
+ // { path: 'resturant/:id', component: TableBasicExample }
 
 ];
  

@@ -13,4 +13,13 @@ export class DataService {
     return this.menuMap.get(menuId);
   }
 
+  currentMenuCatagory: String;
+  getCurrentMenuCatagory(){
+    return this.currentMenuCatagory;
+  }
+
+  setCurrentMenuCatagory(menuCatagory){
+    this.currentMenuCatagory = menuCatagory;
+  }
+
 }

@@ -26,7 +26,7 @@ export class TableBasicExample implements OnInit{
   displayedColumns = [];
   sort : Sort;
   currentResturantName : String;
-  dataSource = new MenuDataSource(this.menuService, this.route, this.sort);
+  dataSource = new MenuDataSource(this.menuService, this.route, this.sort, this.dataService);
 
   constructor(
     private menuService: MenuService, 
@@ -50,7 +50,7 @@ export class TableBasicExample implements OnInit{
 
     sortData(sort: Sort){
       this.sort = sort;
-      this.dataSource = new MenuDataSource(this.menuService, this.route, this.sort);
+      this.dataSource = new MenuDataSource(this.menuService, this.route, this.sort, this.dataService);
     }
 
     goBack(): void {
@@ -66,7 +66,8 @@ export class MenuDataSource extends DataSource<any> {
   constructor(
     private menuService: MenuService,
     private route: ActivatedRoute,
-    private sort: Sort
+    private sort: Sort,
+    private dataService:DataService,
     ) {
     super();
   }
@@ -77,7 +78,8 @@ export class MenuDataSource extends DataSource<any> {
 
   connect(): Observable<MenuItem[]> {
     const id = +this.route.snapshot.paramMap.get('id');
-    return  this.menuService.getMenuItems(id, this.sort);
+    const catagory = this.dataService.getCurrentMenuCatagory();
+    return  this.menuService.getMenuItems(id,catagory, this.sort);
   }
 
   disconnect() {}

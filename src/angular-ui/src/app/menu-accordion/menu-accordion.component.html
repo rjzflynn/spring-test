@@ -1,0 +1,22 @@
+<h1> {{currentResturantName}} Menu </h1 >
+
+<mat-accordion class="example-headers-align">
+
+  <mat-expansion-panel *ngFor="let catagory of catagories" (opened)="onExpand(catagory)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+          {{catagory}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <ng-template matExpansionPanelContent>
+        <table-basic-example></table-basic-example>
+    </ng-template>
+    
+
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<button mat-button (click)="goBack()">Go Back</button>
+

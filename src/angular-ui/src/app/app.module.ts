@@ -43,6 +43,7 @@ import {
   MatStepperModule,
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MenuAccordionComponent } from './menu-accordion/menu-accordion.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppComponent,
     TableBasicExample,
     ToolbarComponent,
-    ResturantGridComponent
+    ResturantGridComponent,
+    MenuAccordionComponent
   ],
   imports: [
     MatAutocompleteModule,

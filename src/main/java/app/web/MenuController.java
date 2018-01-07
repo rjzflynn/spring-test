@@ -18,14 +18,26 @@ import app.util.MenuItemComparator;
 
 @RestController
 public class MenuController {
-
+	
 	@CrossOrigin()
-	@RequestMapping(value = "/getMenu/{id}", method = RequestMethod.GET)
-	public ArrayList<MenuItem> getMenu(@PathVariable int id,
+	@RequestMapping(value = "/getMenuCatagories/{id}", method = RequestMethod.GET)
+	public ArrayList<String> getMenuCatagories(@PathVariable int id) {
+		ArrayList<String> catagories = new ArrayList<String>();
+		catagories.add("Beef");
+		catagories.add("Chicken");
+		catagories.add("Fish");
+		catagories.add("Salads");
+		catagories.add("Sides");
+		return catagories;
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@RequestMapping(value = "/getMenu/{id}/{catagory}", method = RequestMethod.GET)
+	public ArrayList<MenuItem> getMenu(@PathVariable int id, @PathVariable String catagory,
 			@RequestParam(value = "sort", required = false) String sort,
 			@RequestParam(value = "by", required = false) String by) {
-
-		List<MenuItem> menuItems = MenuService.buildMenuItems(id);
+		
+		List<MenuItem> menuItems = MenuService.buildMenuItems(id, catagory);
 
 		if (sort != null) {
 			boolean sortAsc = sort.equalsIgnoreCase("asc");
