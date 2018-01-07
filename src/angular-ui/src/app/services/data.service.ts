@@ -11,8 +11,8 @@ export class DataService {
   [3,"Subway"],[4,"KFC"]])
 
   constructor() {
-    this.winHeight = window.screen.height;
-    this.winWidth = window.screen.width;
+    this.winHeight = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    this.winWidth = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
    }
 
    getWindowWidth(){

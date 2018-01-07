@@ -32,7 +32,7 @@ export class TableBasicExample implements OnInit{
     private location: Location,
     private dataService:DataService,
     ) {
-      if(this.dataService.winWidth < 440){
+      if(this.dataService.getWindowWidth() < 440){
         this.displayedColumns = this.displayedColumnsMobile;
       } else {
         this.displayedColumns = this.displayedColumnsDesktop;
