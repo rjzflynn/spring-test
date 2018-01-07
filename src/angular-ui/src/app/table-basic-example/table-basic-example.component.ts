@@ -17,8 +17,6 @@ import { Location } from '@angular/common';
 })
 export class TableBasicExample implements OnInit{
 
-  winHeight: number;
-  winWidth: number;
   displayedColumnsMobile = ['name', 'calories', 'fat', 'protein', 'carbs'];
   displayedColumnsDesktop = ['name', 'calories', 'fat', 'caloriesFromFat','saturatedFat',
                             'transFat', 'protein', 'carbs'];
@@ -34,9 +32,7 @@ export class TableBasicExample implements OnInit{
     private location: Location,
     private dataService:DataService,
     ) {
-      this.winHeight = window.screen.height;
-      this.winWidth = window.screen.width;
-      if(this.winWidth < 440){
+      if(this.dataService.winWidth < 440){
         this.displayedColumns = this.displayedColumnsMobile;
       } else {
         this.displayedColumns = this.displayedColumnsDesktop;
