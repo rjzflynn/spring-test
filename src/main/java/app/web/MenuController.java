@@ -31,7 +31,7 @@ public class MenuController {
 		return catagories;
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin()
 	@RequestMapping(value = "/getMenu/{id}/{catagory}", method = RequestMethod.GET)
 	public ArrayList<MenuItem> getMenu(@PathVariable int id, @PathVariable String catagory,
 			@RequestParam(value = "sort", required = false) String sort,

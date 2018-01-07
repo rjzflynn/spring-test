@@ -13,7 +13,7 @@ export class DataService {
     return this.menuMap.get(menuId);
   }
 
-  currentMenuCatagory: String;
+  currentMenuCatagory: string;
   getCurrentMenuCatagory(){
     return this.currentMenuCatagory;
   }
