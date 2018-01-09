@@ -1,25 +1,45 @@
-# spring-test
-small spring boot project to try it out w/ angular 4 UI
+# Fast Food Protein
+
+Simple project to get familiar with Spring and Angular
+
+### Prerequisites
 
 
-spring backend
-angular ui
+```
+Maven
+Node
+Angular
+Angular CLI
+```
 
-install angular cli:
-npm install -g @angular/cli
+### Installing
+
 
 Install Angular Material and Angular CDK:
+
+```
 npm install --save @angular/material @angular/cdk
+```
 
 Install Angular animations
+
+```
 npm install --save @angular/animations
+```
 
-Install Flex Layout:
+Install Flex Layout
+
+```
 npm install @angular/flex-layout --save
+```
 
 
+### Running locally
+UI:
+```
+ng serve
+```
+ from angular-ui folder 
 
-
-Run:
-backend : run main in Application.java
-ui L run "ng serve" from angular-ui folder 
+BACKEND:
+run main method in Application.java
